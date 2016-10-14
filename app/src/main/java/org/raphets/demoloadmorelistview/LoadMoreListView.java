@@ -36,8 +36,6 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
     private void init(Context context){
         this.mContext=context;
         mFootView= LayoutInflater.from(context).inflate(R.layout.foot_view,null);
-        addFooterView(mFootView);
-        mFootView.setVisibility(GONE);
         setOnScrollListener(this);
     }
 
@@ -49,7 +47,7 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
         if (!mIsLoading&&scrollState == OnScrollListener.SCROLL_STATE_IDLE
                 && lastVisibleIndex ==mTotalItemCount-1) {
             mIsLoading=true;
-            mFootView.setVisibility(VISIBLE);
+            addFooterView(mFootView);
             if (mLoadMoreListener!=null) {
                 mLoadMoreListener.onloadMore();
             }
@@ -61,15 +59,15 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
         mTotalItemCount=totalItemCount;
     }
 
-    public void setONLoadMoreListener(OnLoadMoreListener listener){
+    public void setOnLoadMoreListener(OnLoadMoreListener listener){
         mLoadMoreListener=listener;
     }
 
     public interface OnLoadMoreListener{
         void onloadMore();
     }
-    public void setLoading(boolean isLoading){
-        mIsLoading=isLoading;
-        mFootView.setVisibility(GONE);
+    public void setLoadCompleted(){
+        mIsLoading=false;
+       removeFooterView(mFootView);
     }
 }

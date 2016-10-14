@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,mData);
         mListView.setAdapter(adapter);
-        mListView.setONLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
+        mListView.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
             @Override
             public void onloadMore() {
                 loadMore();
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         adapter.notifyDataSetChanged();
-                        mListView.setLoading(false);
+                        mListView.setLoadCompleted();
                     }
                 });
             }
