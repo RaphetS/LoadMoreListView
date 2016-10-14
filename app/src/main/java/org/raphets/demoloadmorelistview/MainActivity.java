@@ -45,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 super.run();
-                mData.add("atate");
-                mData.add("546646");
-                mData.add("546646");
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                mData.add("atate");
+                mData.add("546646");
+                mData.add("546646");
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
