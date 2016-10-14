@@ -55,4 +55,4 @@ mListView.setONLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
     }
 ```
 
-**加载完成，记得调用setLoading(false);**
+**加载完成，记得调用setLoadCompleted();**
