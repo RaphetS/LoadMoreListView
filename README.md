@@ -1,5 +1,5 @@
-# LoadMoreListView
-支持加载更多的ListView
+#支持加载更多的ListView
+![image](https://github.com/RaphetS/LoadMoreListView/blob/master/%E6%95%88%E6%9E%9C%E5%9B%BE/%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD.gif)
 
 #使用方法
 布局文件
